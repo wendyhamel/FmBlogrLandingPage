@@ -6,7 +6,7 @@
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
 
-  <!--      font        -->
+  <!-- font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@300;600&family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
@@ -14,46 +14,79 @@
   <link href="./src/output.css" rel="stylesheet">
   <title>Frontend Mentor | Blogr</title>
 
+
   <!-- Alpine Core -->
   <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
 </head>
-<body>
-  <header class="bg-gradient-to-br from-red-gradient-start to-red-gradient-end md:bg-gradient-to-r">
-    <nav>
-      <ul>
-        <li>
-          <p>Product</p>
-          <ul>
-            <li>Overview</li>
-            <li>Pricing</li>
-            <li>Marketplace</li>
-            <li>Features</li>
-            <li>Integrations</li>
-          </ul>
-        </li>
-        <li>
-          <p>Company</p>
-          <ul>
-            <li>About</li>
-            <li>Team</li>
-            <li>Blog</li>
-            <li>Careers</li>
-          </ul>
-        </li>
-        <li>
-          <p>Connect</p>
-          <ul>
-            <li>Contact</li>
-            <li>Newsletter</li>
-            <li>LinkedIn</li>
-          </ul>
-        </li>
-      </ul>
-      <ul>
-        <li>Login</li>
-        <li>Sign Up</li>
-      </ul>
+<body x-data="menuItems()" class="text-dark-gray-blue">
+  <header class="relative bg-gradient-to-br from-red-gradient-start to-red-gradient-end md:bg-gradient-to-r">
+    <picture>
+      <source srcset="./images/bg-pattern-intro-mobile.svg" media="(orrientation:portrait)">
+      <img class="absolute object-cover w-full -mt-24 -mr-24" src="./images/bg-pattern-intro-desktop.svg" alt="">
+    </picture>
+
+    <nav class="relative flex gap-6 justify-between items-center">
+      <a href="#">
+        <img src="./images/logo.svg" alt="">
+      </a>
+      <div class="hidden md:block">
+        <ul>
+          <template x-for="item in menuItems">
+            <li>
+              <button>
+                <span x-text="item.title"></span>
+                <span>
+                <img class="" src="./images/icon-arrow-light.svg" alt="">
+              </span>
+              </button>
+              <ul>
+                <template x-for="subItem in item.subItems">
+                  <li x-text="subItem"></li>
+                </template>
+              </ul>
+            </li>
+          </template>
+        </ul>
+        <ul>
+          <li>Login</li>
+          <li>Sign Up</li>
+        </ul>
+      </div>
+      <div class="relative md:hidden">
+        <button x-on:click="menuOpened = !menuOpened">
+          <span class="sr-only" x-text="menuOpened ? 'close menu' : 'open menu'"></span>
+          <img x-show="!menuOpened" class="" src="./images/icon-hamburger.svg" alt="">
+          <img x-show="menuOpened" class="" src="./images/icon-close.svg" alt="">
+        </button>
+        <div x-show="menuOpened" class="fixed inset-x-0 px-6">
+          <div class="bg-white">
+            <ul>
+              <template x-for="item in menuItems" :key="index">
+                <li>
+                  <details>
+                    <summary class="flex gap-2 items-center">
+                      <span x-text="item.title"></span>
+                      <span>
+                      <img class="transform" :class="subMenuOpened ? 'rotate-180'" src="./images/icon-arrow-dark.svg" alt="">
+                    </span>
+                    </summary>
+                    <ul class="bg-gray-blue">
+                      <template x-for="subItem in item.subItems" :key="index">
+                        <li x-text="subItem"></li>
+                      </template>
+                    </ul>
+                  </details>
+                </li>
+              </template>
+            </ul>
+            <ul>
+              <li>Login</li>
+              <li>Sign Up</li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </nav>
 
     <section>
@@ -68,6 +101,10 @@
   <main>
     <section>
       <h2>Designed for the future</h2>
+      <picture>
+        <img src="./images/illustration-editor-desktop.svg" alt="">
+        <img src="./images/illustration-editor-mobile.svg" alt="">
+      </picture>
       <div>
         <img src="" alt="">
         <section>
@@ -84,7 +121,8 @@
       </div>
     </section>
     <section class="bg-gradient-to-br from-blue-gradient-start to-blue-gradient-end md:bg-gradient-to-r">
-      <img src="" alt="">
+      <img src="./images/bg-pattern-circles.svg" alt="">
+      <img src="./images/illustration-phones.svg" alt="">
       <div>
         <h3>State of the Art Infrastructure</h3>
         <p>With reliability and speed in mind, worldwide data centers provide the backbone for ultra-fast connectivity.
@@ -92,7 +130,10 @@
       </div>
     </section>
     <section>
-      <img src="" alt="">
+      <picture>
+        <img src="./images/illustration-laptop-desktop.svg" alt="">
+        <img src="./images/illustration-laptop-mobile.svg" alt="">
+      </picture>
       <div>
         <h3>Free, open, simple</h3>
         <p>Blogr is a free and open source application backed by a large community of helpful developers. It supports
@@ -107,33 +148,18 @@
   <footer class="bg-dark-black-blue text-gray-blue">
     <section>
       <ul>
-        <li>
-          <p>Product</p>
-          <ul>
-            <li>Overview</li>
-            <li>Pricing</li>
-            <li>Marketplace</li>
-            <li>Features</li>
-            <li>Integrations</li>
-          </ul>
-        </li>
-        <li>
-          <p>Company</p>
-          <ul>
-            <li>About</li>
-            <li>Team</li>
-            <li>Blog</li>
-            <li>Careers</li>
-          </ul>
-        </li>
-        <li>
-          <p>Connect</p>
-          <ul>
-            <li>Contact</li>
-            <li>Newsletter</li>
-            <li>LinkedIn</li>
-          </ul>
-        </li>
+        <template x-for="item in menuItems">
+          <li>
+            <button>
+              <span x-text="item.title"></span>
+            </button>
+            <ul>
+              <template x-for="subItem in item.subItems">
+                <li x-text="subItem"></li>
+              </template>
+            </ul>
+          </li>
+        </template>
       </ul>
     </section>
 
@@ -142,5 +168,6 @@
       Coded by <a class="hover:underline" href="https://www.frontendmentor.io/profile/wendyhamel" target="_blank">Wendy Hamel</a>.
     </section>
   </footer>
+  <script src="./src/menu.js"></script>
 </body>
 </html>
