@@ -7,6 +7,9 @@ module.exports = {
       'heading': ['Ubuntu', 'sans-serif'],
     },
     extend: {
+      fontSize: {
+        '3.5xl': '2.05rem',
+      },
       colors: {
         'light-red' : 'hsl(356, 100%, 66%)', //cta text
         'red' : 'hsl(355, 100%, 74%)', //cta hover background

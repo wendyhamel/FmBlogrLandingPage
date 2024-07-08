@@ -9,7 +9,7 @@
   <!-- font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@300..600&family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@300;600&family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
 
   <link href="./src/output.css" rel="stylesheet">
   <title>Frontend Mentor | Blogr</title>
@@ -22,7 +22,7 @@
 
 </head>
 <body x-data="menuItems()" class="text-dark-gray-blue antialiased">
-  <header class="relative bg-gradient-to-br from-red-gradient-start to-red-gradient-end rounded-bl-[90px] md:bg-gradient-to-r pt-12 pb-32 overflow-hidden">
+  <header class="relative bg-gradient-to-br from-red-gradient-start to-red-gradient-end rounded-bl-[90px] md:bg-gradient-to-r pt-14 pb-32 overflow-hidden">
     <div class="absolute inset-0 overflow-hidden">
       <picture>
         <source srcset="./images/bg-pattern-intro-desktop.svg" media="(min-width: 768px)">
@@ -30,29 +30,31 @@
       </picture>
     </div>
 
-    <nav class="relative z-10 flex gap-6 justify-between items-center font-heading px-4">
+    <nav class="relative z-10 font-heading px-6 flex items-center justify-between md:justify-normal">
       <a href="#">
-        <img src="./images/logo.svg" alt="">
+        <img class="w-20" src="./images/logo.svg" alt="">
       </a>
-      <div class="hidden md:block">
-        <ul>
+      <div class="hidden md:block md:w-full md:flex md:items-center md:justify-between md:gap-6">
+        <ul class="flex items-center gap-4">
           <template x-for="item in menuItems">
             <li>
-              <button>
-                <span x-text="item.title"></span>
-                <span>
-                <img class="" src="./images/icon-arrow-light.svg" alt="">
-              </span>
-              </button>
-              <ul>
-                <template x-for="subItem in item.subItems">
-                  <li x-text="subItem"></li>
-                </template>
-              </ul>
+              <details>
+                <summary class="flex gap-2 items-center justify-center">
+                  <span class="font-medium" x-text="item.title"></span>
+                  <span class="grid place-content-center">
+                        <img class="transform" :class="subMenuOpened ? 'rotate-180'" src="./images/icon-arrow-light.svg" alt="">
+                      </span>
+                </summary>
+                <ul class="bg-gray-blue/30 rounded mt-4 py-4 space-y-4">
+                  <template x-for="subItem in item.subItems" :key="index">
+                    <li><a href="#" x-text="subItem"></a></li>
+                  </template>
+                </ul>
+              </details>
             </li>
           </template>
         </ul>
-        <ul>
+        <ul class="flex items-center gap-4">
           <li>Login</li>
           <li>Sign Up</li>
         </ul>
@@ -61,9 +63,9 @@
         <button x-on:click="menuOpened = !menuOpened">
           <span class="sr-only" x-text="menuOpened ? 'close menu' : 'open menu'"></span>
           <img x-show="!menuOpened" class="" src="./images/icon-hamburger.svg" alt="">
-          <img x-show="menuOpened" class="" src="./images/icon-close.svg" alt="">
+          <img x-show="menuOpened" style="display:none !important;" class="" src="./images/icon-close.svg" alt="">
         </button>
-        <div x-show="menuOpened" class="fixed inset-x-0 px-6" x-trap.noscroll="menuOpened">
+        <div x-show="menuOpened" style="display:none !important;" class="fixed inset-x-0 px-6" x-trap.noscroll="menuOpened">
           <div class="py-6 px-4 text-center bg-white rounded">
             <ul class="flex flex-col justify-center gap-4">
               <template x-for="item in menuItems" :key="index">
@@ -93,12 +95,12 @@
       </div>
     </nav>
 
-    <section class="relative text-white text-center font-heading mt-24 px-10">
-      <h1 class="text-3xl font-medium mb-4">A modern publishing platform</h1>
-      <p class="mb-8">Grow your audience and build your online brand</p>
+    <section class="relative text-white text-center mt-24 pt-2 px-10">
+      <h1 class="text-3.5xl font-bold mb-2">A modern publishing platform</h1>
+      <p class="mb-12 font-heading tracking-wider font-light">Grow your audience and build your online brand</p>
       <div class="inline-flex w-full gap-4 flex-wrap justify-center">
-        <a href="#" class="block rounded-full px-4 py-4 border border-white whitespace-nowrap font-bold bg-white text-light-red leading-none">Start for Free</a>
-        <a href="#" class="block rounded-full px-4 py-4 border border-white whitespace-nowrap font-bold text-white leading-none">Learn More</a>
+        <a href="#" class="block rounded-full px-5 py-4 border border-white whitespace-nowrap font-bold bg-white text-light-red leading-none">Start for Free</a>
+        <a href="#" class="block rounded-full px-5 py-4 border border-white whitespace-nowrap font-bold text-white leading-none">Learn More</a>
       </div>
     </section>
   </header>
