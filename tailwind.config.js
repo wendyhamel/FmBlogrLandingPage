@@ -4,10 +4,11 @@ module.exports = {
   theme: {
     fontFamily: {
       'sans': ['Overpass', 'sans-serif'],
-      'heading': ['Ubuntu', 'sans-serif'],
+      'special': ['Ubuntu', 'sans-serif'],
     },
     extend: {
       fontSize: {
+        '2.5xl': '1.75rem',
         '3.5xl': '2.05rem',
       },
       colors: {
