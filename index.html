@@ -30,7 +30,7 @@
       </picture>
     </div>
 
-    <nav class="relative z-10 font-special px-6 flex items-center justify-between md:justify-normal">
+    <nav class="relative z-10 px-6 flex items-center justify-between md:justify-normal">
       <a href="#">
         <img class="w-20" src="./images/logo.svg" alt="">
       </a>
@@ -66,29 +66,29 @@
           <img x-show="menuOpened" style="display:none !important;" class="" src="./images/icon-close.svg" alt="">
         </button>
         <div x-show="menuOpened" style="display:none !important;" class="fixed inset-x-0 px-6" x-trap.noscroll="menuOpened">
-          <div class="py-6 px-4 text-center bg-white rounded">
-            <ul class="flex flex-col justify-center gap-4">
+          <div class="py-8 px-4 mr-3 mt-9 text-center bg-white rounded shadow-2xl">
+            <ul class="flex flex-col justify-center gap-6">
               <template x-for="item in menuItems" :key="index">
-                <li class="mx-4">
+                <li class="mx-3 font-bold">
                   <details>
                     <summary class="flex gap-2 items-center justify-center">
-                      <span class="font-medium" x-text="item.title"></span>
+                      <span class="text-lg" x-text="item.title"></span>
                       <span class="grid place-content-center">
                         <img class="transform" :class="subMenuOpened ? 'rotate-180'" src="./images/icon-arrow-dark.svg" alt="">
                       </span>
                     </summary>
-                    <ul class="bg-gray-blue/30 rounded mt-4 py-4 space-y-4">
+                    <ul class="bg-gray-blue/30 rounded mt-4 pt-3 pb-5 space-y-4">
                       <template x-for="subItem in item.subItems" :key="index">
-                        <li><a href="#" x-text="subItem"></a></li>
+                        <li><a class="opacity-80" href="#" x-text="subItem"></a></li>
                       </template>
                     </ul>
                   </details>
                 </li>
               </template>
             </ul>
-            <ul class="flex flex-col justify-center gap-4 mt-4 py-4 border-t border-gray-blue">
-              <li><a href="#" class="font-medium">Login</a></li>
-              <li><a href="#" class="rounded-full px-12 py-4 bg-gradient-to-r from-red-gradient-start to-red-gradient-end font-bold text-white leading-none">Sign Up</a></li>
+            <ul class="flex flex-col justify-center gap-4 mt-6 mx-3 pt-7 pb-2 border-t border-gray-blue/30 space-y-5">
+              <li><a href="#" class="whitespace-nowrap font-special font-bold text-lg">Login</a></li>
+              <li><a href="#" class="rounded-full px-10 py-3.5 bg-gradient-to-r from-red-gradient-start to-red-gradient-end whitespace-nowrap font-special font-bold text-lg text-white leading-none">Sign Up</a></li>
             </ul>
           </div>
         </div>
@@ -126,7 +126,7 @@
         </section>
       </div>
     </section>
-    <section class="relative">
+    <section class="relative mt-24">
       <img class="relative z-10 -mb-52" src="./images/illustration-phones.svg" alt="">
       <section class="relative px-6 bg-gradient-to-br from-blue-gradient-start to-blue-gradient-end rounded-tr-[100px] rounded-bl-[100px] overflow-hidden md:bg-gradient-to-r">
         <div class="absolute inset-0">
@@ -144,13 +144,13 @@
         <source srcset="./images/illustration-laptop-desktop.svg" media="(min-width: 768px)">
         <img class="object-cover scale-[1.3] translate-y-6" src="./images/illustration-laptop-mobile.svg" alt="">
       </picture>
-      <div class="px-6">
-        <h3 class="mt-24 pt-3 text-2.5xl font-bold tracking-tight text-dark-blue leading-[1.25]">Free, open, simple</h3>
-        <p class="pt-4 leading-[1.75] tracking-wide">Blogr is a free and open source application backed by a large community of helpful developers. It supports
+      <div class="px-8">
+        <h3 class="mt-24 pt-3 text-2.5xl font-bold text-dark-blue leading-[1.25]">Free, open, simple</h3>
+        <p class="pt-5 leading-[1.75] tracking-wide">Blogr is a free and open source application backed by a large community of helpful developers. It supports
   features such as code syntax highlighting, RSS feeds, social media integration, third-party commenting tools,
   and works seamlessly with Google Analytics. The architecture is clean and is relatively easy to learn.</p>
-        <h3 class="mt-12 text-2.5xl font-bold tracking-tight text-dark-blue leading-[1.25]">Powerful tooling</h3>
-        <p class="pt-4 leading-[1.75] tracking-wide">Batteries included. We built a simple and straightforward CLI tool that makes customization and deployment a breeze, but
+        <h3 class="mt-12 text-2.5xl font-bold text-dark-blue leading-[1.25]">Powerful tooling</h3>
+        <p class="pt-5 leading-[1.75] tracking-wide">Batteries included. We built a simple and straightforward CLI tool that makes customization and deployment a breeze, but
   capable of producing even the most complicated sites.</p>
       </div>
     </section>
@@ -158,11 +158,11 @@
   <footer class="mt-24 bg-dark-black-blue text-gray-blue text-center font-special rounded-tr-[100px] pt-16 pb-20">
     <section class="pt-2">
       <img class="mx-auto" src="./images/logo.svg" alt="">
-      <ul class="mt-20 space-y-12">
+      <ul class="mt-20 space-y-12 tracking-wider">
         <template x-for="item in menuItems">
           <li>
             <button>
-              <span class="text-white font-bold" x-text="item.title"></span>
+              <span class="text-white font-bold text-lg" x-text="item.title"></span>
             </button>
             <ul class="pt-5 space-y-2.5">
               <template x-for="subItem in item.subItems">

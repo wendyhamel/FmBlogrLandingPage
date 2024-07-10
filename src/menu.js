@@ -1,6 +1,6 @@
 window.menuItems = function () {
 	return {
-		menuOpened: false,
+		menuOpened: true,
 		subMenuOpened: false,
 		menuItems: [
 			{

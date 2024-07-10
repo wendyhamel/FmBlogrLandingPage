@@ -3,9 +3,8 @@
 @tailwind utilities;
 
 @layer components {
-	details summary::-webkit-details-marker {display: none}
-	details > summary > span > img { rotate: 0deg}
-	details > summary > span > img { rotate: 0deg}
-	details[open] > summary > span > img { rotate: 180deg}
-	details[open] > summary > span > img { rotate: 180deg}
+	details summary::-webkit-details-marker {display: none }
+	details > summary > span > img { rotate: 0deg }
+	details[open] > summary > span { opacity: 80% }
+	details[open] > summary > span > img { rotate: 180deg }
 }
