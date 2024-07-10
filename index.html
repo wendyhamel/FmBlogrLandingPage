@@ -22,119 +22,122 @@
 
 </head>
 <body x-data="menuItems()" class="text-dark-gray-blue antialiased">
-  <header class="relative bg-gradient-to-br from-red-gradient-start to-red-gradient-end rounded-bl-[100px] md:bg-gradient-to-r pt-14 pb-36 overflow-hidden">
-    <div class="absolute inset-0">
-      <picture>
-        <source srcset="./images/bg-pattern-intro-desktop.svg" media="(min-width: 768px)">
-        <img class="object-cover scale-[3.5] origin-top-left -translate-x-[90%] -translate-y-[65%]" src="./images/bg-pattern-intro-mobile.svg" alt="">
-      </picture>
-    </div>
+  <header class="relative bg-gradient-to-br from-red-gradient-start to-red-gradient-end rounded-bl-[100px] overflow-hidden md:bg-gradient-to-r">
+    <div class="relative pt-14 pb-36 md:max-w-[1115px] md:mx-auto md:mt-1.5">
 
-    <nav class="relative z-10 px-6 flex items-center justify-between md:justify-normal">
-      <a href="#">
-        <img class="w-20" src="./images/logo.svg" alt="">
-      </a>
-      <div class="hidden md:block md:w-full md:flex md:items-center md:justify-between md:gap-6">
-        <ul class="flex items-center gap-4">
-          <template x-for="item in menuItems">
-            <li>
-              <details>
-                <summary class="flex gap-2 items-center justify-center">
-                  <span class="font-medium" x-text="item.title"></span>
-                  <span class="grid place-content-center">
-                        <img class="transform" :class="subMenuOpened ? 'rotate-180'" src="./images/icon-arrow-light.svg" alt="">
-                      </span>
-                </summary>
-                <ul class="bg-gray-blue/30 rounded mt-4 py-4 space-y-4">
-                  <template x-for="subItem in item.subItems" :key="index">
-                    <li><a href="#" x-text="subItem"></a></li>
-                  </template>
-                </ul>
-              </details>
-            </li>
-          </template>
-        </ul>
-        <ul class="flex items-center gap-4">
-          <li>Login</li>
-          <li>Sign Up</li>
-        </ul>
+      <div class="absolute inset-0">
+        <picture>
+          <source srcset="./images/bg-pattern-intro-desktop.svg" media="(min-width: 768px)">
+          <img class="object-cover scale-[3.5] origin-top-left -translate-x-[90%] -translate-y-[65%] md:scale-[2.85] md:-translate-x-[54%] md:-translate-y-[121%]" src="./images/bg-pattern-intro-mobile.svg" alt="">
+        </picture>
       </div>
-      <div class="relative md:hidden" @keyup.escape="menuOpened = false">
-        <button x-on:click="menuOpened = !menuOpened">
-          <span class="sr-only" x-text="menuOpened ? 'close menu' : 'open menu'"></span>
-          <img x-show="!menuOpened" class="" src="./images/icon-hamburger.svg" alt="">
-          <img x-show="menuOpened" style="display:none !important;" class="" src="./images/icon-close.svg" alt="">
-        </button>
-        <div x-show="menuOpened" style="display:none !important;" class="fixed inset-x-0 px-6" x-trap.noscroll="menuOpened">
-          <div class="py-8 px-4 mr-3 mt-9 text-center bg-white rounded shadow-2xl">
-            <ul class="flex flex-col justify-center gap-6">
-              <template x-for="item in menuItems" :key="index">
-                <li class="mx-3 font-bold">
-                  <details>
-                    <summary class="flex gap-2 items-center justify-center">
-                      <span class="text-lg" x-text="item.title"></span>
-                      <span class="grid place-content-center">
-                        <img class="transform" :class="subMenuOpened ? 'rotate-180'" src="./images/icon-arrow-dark.svg" alt="">
-                      </span>
-                    </summary>
-                    <ul class="bg-gray-blue/30 rounded mt-4 pt-3 pb-5 space-y-4">
-                      <template x-for="subItem in item.subItems" :key="index">
-                        <li><a class="opacity-80" href="#" x-text="subItem"></a></li>
-                      </template>
-                    </ul>
-                  </details>
-                </li>
-              </template>
-            </ul>
-            <ul class="flex flex-col justify-center gap-4 mt-6 mx-3 pt-7 pb-2 border-t border-gray-blue/30 space-y-5">
-              <li><a href="#" class="whitespace-nowrap font-special font-bold text-lg">Login</a></li>
-              <li><a href="#" class="rounded-full px-10 py-3.5 bg-gradient-to-r from-red-gradient-start to-red-gradient-end whitespace-nowrap font-special font-bold text-lg text-white leading-none">Sign Up</a></li>
-            </ul>
+
+      <nav class="relative z-10 px-6 flex items-center justify-between gap-6 md:justify-normal md:pl-1 md:pr-0 md:gap-16">
+        <a href="#">
+          <img class="w-20 md:w-[118px]" src="./images/logo.svg" alt="">
+        </a>
+        <div class="hidden md:block md:w-full md:flex md:items-center md:justify-between md:gap-6">
+          <ul class="flex items-center gap-8 font-special">
+            <template x-for="item in menuItems">
+              <li class="text-white/80 hover:text-white">
+                <details>
+                  <summary class="flex gap-2 items-center justify-center">
+                    <span class="font-medium" x-text="item.title"></span>
+                    <span class="grid place-content-center">
+                          <img class="transform" :class="subMenuOpened ? 'rotate-180'" src="./images/icon-arrow-light.svg" alt="">
+                        </span>
+                  </summary>
+                  <ul class="bg-gray-blue/30 rounded mt-4 py-4 space-y-4">
+                    <template x-for="subItem in item.subItems" :key="index">
+                      <li><a href="#" x-text="subItem"></a></li>
+                    </template>
+                  </ul>
+                </details>
+              </li>
+            </template>
+          </ul>
+          <ul class="flex items-center gap-6">
+            <li><a href="#" class="whitespace-nowrap font-special font-bold text-white/80 px-2 hover:text-white">Login</a></li>
+            <li><a href="#" class="block rounded-full px-9 py-3.5 border border-white whitespace-nowrap font-special font-bold bg-white text-light-red leading-none">Sign Up</a></li>
+          </ul>
+        </div>
+        <div class="relative md:hidden" @keyup.escape="menuOpened = false">
+          <button x-on:click="menuOpened = !menuOpened">
+            <span class="sr-only" x-text="menuOpened ? 'close menu' : 'open menu'"></span>
+            <img x-show="!menuOpened" class="" src="./images/icon-hamburger.svg" alt="">
+            <img x-show="menuOpened" style="display:none !important;" class="" src="./images/icon-close.svg" alt="">
+          </button>
+          <div x-show="menuOpened" style="display:none !important;" class="fixed inset-x-0 px-6" x-trap.noscroll="menuOpened">
+            <div class="py-8 px-4 mr-3 mt-9 text-center bg-white rounded shadow-2xl">
+              <ul class="flex flex-col justify-center gap-6">
+                <template x-for="item in menuItems" :key="index">
+                  <li class="mx-3 font-bold">
+                    <details>
+                      <summary class="flex gap-2 items-center justify-center">
+                        <span class="text-lg" x-text="item.title"></span>
+                        <span class="grid place-content-center">
+                          <img class="transform" :class="subMenuOpened ? 'rotate-180'" src="./images/icon-arrow-dark.svg" alt="">
+                        </span>
+                      </summary>
+                      <ul class="bg-gray-blue/30 rounded mt-4 pt-3 pb-5 space-y-4">
+                        <template x-for="subItem in item.subItems" :key="index">
+                          <li><a class="opacity-80" href="#" x-text="subItem"></a></li>
+                        </template>
+                      </ul>
+                    </details>
+                  </li>
+                </template>
+              </ul>
+              <ul class="flex flex-col justify-center gap-4 mt-6 mx-3 pt-7 pb-2 border-t border-gray-blue/30 space-y-5">
+                <li><a href="#" class="whitespace-nowrap font-special font-bold text-lg">Login</a></li>
+                <li><a href="#" class="rounded-full px-10 py-3.5 bg-gradient-to-r from-red-gradient-start to-red-gradient-end whitespace-nowrap font-special font-bold text-lg text-white leading-none">Sign Up</a></li>
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
-    </nav>
-
-    <section class="relative text-white text-center mt-24 pt-3.5 px-10 pb-2">
-      <h1 class="text-3.5xl font-bold mb-2">A modern publishing platform</h1>
-      <p class="mb-12 font-special tracking-wider font-light">Grow your audience and build your online brand</p>
-      <div class="inline-flex w-full gap-6 flex-wrap justify-center">
-        <a href="#" class="block rounded-full px-4 py-3.5 border border-white whitespace-nowrap font-special font-bold bg-white text-light-red leading-none">Start for Free</a>
-        <a href="#" class="block rounded-full px-4 py-3.5 border border-white whitespace-nowrap font-special font-bold text-white leading-none">Learn More</a>
-      </div>
-    </section>
-  </header>
-  <main class="text-center">
-    <section class="mt-24">
-      <h2 class="text-2.5xl font-bold tracking-tight text-dark-blue pb-10">Designed for the future</h2>
-      <picture>
-        <source srcset="./images/illustration-editor-desktop.svg" media="(min-width: 768px)">
-        <img src="./images/illustration-editor-mobile.svg" alt="">
-      </picture>
-      <div>
-        <img src="" alt="">
-        <section class="px-6">
-          <h3 class="mt-12 text-2.5xl font-bold tracking-tight text-dark-blue leading-[1.125]">Introducing an <br/> extensible editor</h3>
-          <p class="pt-4 leading-[1.75] tracking-wider">Blogr features an exceedingly intuitive interface which lets you focus on one thing: creating content.
-  The editor supports management of multiple blogs and allows easy manipulation of embeds such as images,
-  videos, and Markdown. Extensibility with plugins and themes provide easy ways to add functionality or
-  change the looks of a blog.</p>
-
-          <h3 class="mt-12 text-2.5xl font-bold tracking-tight text-dark-blue leading-[1.125]">Robust content management</h3>
-          <p class="pt-4 leading-[1.75] tracking-wider">Flexible content management enables users to easily move through posts. Increase the usability of your blog
-  by adding customized categories, sections, format, or flow. With this functionality, you’re in full control.</p>
-        </section>
-      </div>
-    </section>
-    <section class="relative mt-24">
-      <img class="relative z-10 -mb-52" src="./images/illustration-phones.svg" alt="">
-      <section class="relative px-6 bg-gradient-to-br from-blue-gradient-start to-blue-gradient-end rounded-tr-[100px] rounded-bl-[100px] overflow-hidden md:bg-gradient-to-r">
-        <div class="absolute inset-0">
-            <img class="object-cover scale-[1.6] origin-top-left -translate-x-[30%] -translate-y-[66%]" src="./images/bg-pattern-circles.svg" alt="">
+      </nav>
+      <section class="relative text-white text-center mt-24 pt-3.5 px-10 pb-2 md:mt-32 md:pt-1.5">
+        <h1 class="text-3.5xl font-bold mb-2 md:text-6xl md:tracking-[-0.0125em] md:mb-4">A modern publishing platform</h1>
+        <p class="mb-12 font-special tracking-wider font-light md:text-lg md:tracking-wide md:pt-1">Grow your audience and build your online brand</p>
+        <div class="inline-flex w-full gap-6 flex-wrap justify-center">
+          <a href="#" class="block rounded-full px-4 py-3.5 border border-white whitespace-nowrap font-special font-bold bg-white text-light-red leading-none">Start for Free</a>
+          <a href="#" class="block rounded-full px-4 py-3.5 border border-white whitespace-nowrap font-special font-bold text-white leading-none">Learn More</a>
         </div>
-        <div class="pt-40 mt-1 pb-28 relative">
+      </section>
+    </div>
+  </header>
+  <main class="overflow-hidden text-center md:text-start">
+    <section class="md:max-w-[1115px] md:mx-auto">
+      <div class="mt-24 md:grid md:grid-cols-2 md:mt-36 md:pt-1">
+        <h2 class="text-2.5xl font-bold tracking-tight text-dark-blue pb-10 md:col-span-full md:text-center md:text-4.5xl md:tracking-[-0.04em] ">Designed for the future</h2>
+        <picture>
+          <source srcset="./images/illustration-editor-desktop.svg" media="(min-width: 768px)">
+          <img class="md:col-start-2 md:row-start-2 md:scale-[1.6] md:translate-x-60 md:-ml-0.5 md:-translate-y-3" src="./images/illustration-editor-mobile.svg" alt="">
+        </picture>
+        <div class="md:col-start-1 md:row-start-2 md:pt-2">
+          <img src="" alt="">
+          <section class="px-6 md:pl-0.5 md:pr-5">
+            <h3 class="mt-12 text-2.5xl font-bold tracking-tight text-dark-blue leading-[1.125] md:tracking-[-0.005em]">Introducing an <br class="md:hidden"/> extensible editor</h3>
+            <p class="pt-4 leading-[1.75] tracking-wider md:tracking-[0.03em] md:pt-6">Blogr features an exceedingly intuitive interface which lets you focus on one thing: creating content.
+    The editor supports management of multiple blogs and allows easy manipulation of embeds such as images,
+    videos, and Markdown. Extensibility with plugins and themes provide easy ways to add functionality or
+    change the looks of a blog.</p>
+            <h3 class="mt-12 text-2.5xl font-bold tracking-tight text-dark-blue leading-[1.125] md:tracking-[-0.005em] md:mt-16 md:pt-3">Robust content management</h3>
+            <p class="pt-4 leading-[1.75] tracking-wider md:tracking-none md:pt-6">Flexible content management enables users to easily move through posts. Increase the usability of your blog
+    by adding customized categories, sections, format, or flow. With this functionality, you’re in full control.</p>
+          </section>
+        </div>
+      </div>
+    </section>
+    <section class="relative mt-24 md:mt-4">
+      <img class="relative z-10 -mb-52 md:-mb-96 md:translate-y-32 md:translate-x-32" src="./images/illustration-phones.svg" alt="">
+      <section class="relative px-6 bg-gradient-to-br from-blue-gradient-start to-blue-gradient-end rounded-tr-[100px] rounded-bl-[100px] overflow-hidden md:bg-gradient-to-r md:grid md:grid-cols-2">
+        <div class="absolute inset-0">
+            <img class="object-cover scale-[1.6] origin-top-left -translate-x-[30%] -translate-y-[66%] md:scale-100 md:-translate-x-[21%] md:-translate-y-[50%]" src="./images/bg-pattern-circles.svg" alt="">
+        </div>
+        <div class="pt-40 mt-1 pb-28 relative md:pt-16 md:col-start-2 md:pl-4 md:pr-3 md:max-w-xl md:pb-24">
           <h3 class="mt-12 text-4.5xl font-bold tracking-tight text-white leading-[1.2]">State of the Art Infrastructure</h3>
-          <p class="pt-5 leading-[1.75] text-white tracking-wider">With reliability and speed in mind, worldwide data centers provide the backbone for ultra-fast connectivity.
+          <p class="pt-5 leading-[1.75] text-white tracking-wider md:tracking-wide md:pb-2">With reliability and speed in mind, worldwide data centers provide the backbone for ultra-fast connectivity.
     This ensures your site will load instantly, no matter where your readers are, keeping your site competitive.</p>
         </div>
       </section>
@@ -154,6 +157,7 @@
   capable of producing even the most complicated sites.</p>
       </div>
     </section>
+
   </main>
   <footer class="mt-24 bg-dark-black-blue text-gray-blue text-center font-special rounded-tr-[100px] pt-16 pb-20">
     <section class="pt-2">

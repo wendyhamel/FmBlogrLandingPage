@@ -1,10 +1,10 @@
 window.menuItems = function () {
 	return {
-		menuOpened: true,
+		menuOpened: false,
 		subMenuOpened: false,
 		menuItems: [
 			{
-				title: 'Products',
+				title: 'Product',
 				subItems: [
 					'Overview',
 					'Pricing',
