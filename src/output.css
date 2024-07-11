@@ -1544,6 +1544,14 @@ li.group > details[open] > summary > span > img {
     padding-top: 1.5rem;
   }
 
+  .md\:pb-4 {
+    padding-bottom: 1rem;
+  }
+
+  .md\:pb-6 {
+    padding-bottom: 1.5rem;
+  }
+
   .md\:text-center {
     text-align: center;
   }
