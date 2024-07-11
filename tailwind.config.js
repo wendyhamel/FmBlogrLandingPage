@@ -12,6 +12,25 @@ module.exports = {
         '3.5xl': '2.05rem',
         '4.5xl': '2.5rem',
       },
+      borderRadius: {
+        '100': '100px'
+      },
+      maxWidth: {
+        'custom': '1115px',
+      },
+      scale: {
+        '160': '1.6',
+      },
+      leading: {
+        'xs': '1.125',
+        'slack': '1.75',
+      },
+      letterSpacing: {
+        'xs': '0.005em',
+      },
+      translate: {
+        '3/7': '21%',
+      },
       colors: {
         'light-red' : 'hsl(356, 100%, 66%)', //cta text
         'red' : 'hsl(355, 100%, 74%)', //cta hover background

@@ -22,8 +22,8 @@
 
 </head>
 <body x-data="menuItems()" class="text-dark-gray-blue antialiased">
-  <header class="relative bg-gradient-to-br from-red-gradient-start to-red-gradient-end rounded-bl-[100px] overflow-hidden md:bg-gradient-to-r">
-    <div class="relative pt-14 pb-36 md:max-w-[1115px] md:px-4 md:mx-auto md:mt-1.5 xl:px-0">
+  <header class="relative bg-gradient-to-br from-red-gradient-start to-red-gradient-end rounded-bl-100 overflow-hidden md:bg-gradient-to-r">
+    <div class="relative pt-14 pb-36 md:max-w-custom md:px-4 md:mx-auto md:mt-1.5 xl:px-0">
 
       <div class="absolute inset-0">
         <picture>
@@ -34,6 +34,7 @@
 
       <nav class="relative z-10 px-6 flex items-center justify-between gap-6 md:justify-normal md:pl-1 md:pr-0 md:gap-16">
         <a href="#">
+          <span class="sr-only">Blogr homepage</span>
           <img class="w-20 md:w-[118px]" src="./images/logo.svg" alt="">
         </a>
         <div class="hidden md:block md:w-full md:flex md:items-center md:justify-between md:gap-6">
@@ -107,22 +108,22 @@
     </div>
   </header>
   <main class="overflow-hidden text-center md:text-start md:pb-2">
-    <section class="md:max-w-[1115px] md:mx-auto">
+    <section class="md:max-w-custom md:mx-auto">
       <div class="mt-24 md:grid md:grid-cols-2 md:mt-36 md:pt-1">
         <h2 class="text-2.5xl font-bold tracking-tight text-dark-blue pb-10 md:col-span-full md:text-center md:text-4.5xl md:tracking-[-0.04em] ">Designed for the future</h2>
         <picture>
           <source srcset="./images/illustration-editor-desktop.svg" media="(min-width: 768px)">
-          <img class="mx-auto md:col-start-2 md:row-start-2 md:scale-[1.6] md:translate-x-60 md:-ml-0.5 md:-translate-y-3" src="./images/illustration-editor-mobile.svg" alt="">
+          <img class="mx-auto md:col-start-2 md:row-start-2 md:scale-160 md:translate-x-60 md:-ml-0.5 md:-translate-y-3" src="./images/illustration-editor-mobile.svg" alt="">
         </picture>
         <div class="md:col-start-1 md:row-start-2 md:pt-2 md:ml-4 xl:ml-0">
           <section class="px-6 md:pl-0.5 md:pr-0 lg:pr-5">
-            <h3 class="mt-12 text-2.5xl font-bold tracking-tight text-dark-blue leading-[1.125] md:tracking-[-0.005em]">Introducing an <br class="md:hidden"/> extensible editor</h3>
-            <p class="pt-4 leading-[1.75] tracking-wider md:tracking-[0.03em] md:pt-6">Blogr features an exceedingly intuitive interface which lets you focus on one thing: creating content.
+            <h3 class="mt-12 text-2.5xl font-bold tracking-tight text-dark-blue leading-xs md:tracking-xs">Introducing an <br class="md:hidden"/> extensible editor</h3>
+            <p class="pt-4 leading-slack tracking-wider md:tracking-[0.03em] md:pt-6">Blogr features an exceedingly intuitive interface which lets you focus on one thing: creating content.
     The editor supports management of multiple blogs and allows easy manipulation of embeds such as images,
     videos, and Markdown. Extensibility with plugins and themes provide easy ways to add functionality or
     change the looks of a blog.</p>
-            <h3 class="mt-12 text-2.5xl font-bold tracking-tight text-dark-blue leading-[1.125] md:tracking-[-0.005em] md:mt-16 md:pt-3">Robust content management</h3>
-            <p class="pt-4 leading-[1.75] tracking-wider md:tracking-none md:pt-6">Flexible content management enables users to easily move through posts. Increase the usability of your blog
+            <h3 class="mt-12 text-2.5xl font-bold tracking-tight text-dark-blue leading-xs md:tracking-xs md:mt-16 md:pt-3">Robust content management</h3>
+            <p class="pt-4 leading-slack tracking-wider md:tracking-none md:pt-6">Flexible content management enables users to easily move through posts. Increase the usability of your blog
     by adding customized categories, sections, format, or flow. With this functionality, you’re in full control.</p>
           </section>
         </div>
@@ -130,13 +131,13 @@
     </section>
     <section class="relative mt-24 md:mt-4">
       <img class="relative z-10 mx-auto -mb-52 md:scale-75 md:-translate-x-[34%] md:-mb-96 lg:-translate-x-[40%] lg:translate-y-32 xl:ml-0 xl:-mb-96 xl:scale-100 xl:translate-x-[22%]" src="./images/illustration-phones.svg" alt="">
-      <section class="relative px-6 bg-gradient-to-br from-blue-gradient-start to-blue-gradient-end rounded-tr-[100px] rounded-bl-[100px] overflow-hidden md:bg-gradient-to-r md:grid md:grid-cols-2">
+      <section class="relative px-6 bg-gradient-to-br from-blue-gradient-start to-blue-gradient-end rounded-tr-100 rounded-bl-100 overflow-hidden md:bg-gradient-to-r md:grid md:grid-cols-2">
         <div class="absolute inset-0">
-            <img class="object-cover scale-[1.6] origin-top-left -translate-x-[30%] -translate-y-[66%] md:scale-100 md:-translate-x-[21%] md:-translate-y-[50%]" src="./images/bg-pattern-circles.svg" alt="">
+            <img class="object-cover scale-160 origin-top-left -translate-x-[30%] -translate-y-2/3 md:scale-100 md:-translate-x-3/7 md:-translate-y-2/4" src="./images/bg-pattern-circles.svg" alt="">
         </div>
         <div class="pt-40 mt-1 pb-28 relative md:pt-16 md:col-start-2 md:pl-4 md:pr-3 md:max-w-xl md:pb-24">
-          <h3 class="mt-12 text-4.5xl font-bold tracking-tight text-white leading-[1.2]">State of the Art Infrastructure</h3>
-          <p class="pt-5 leading-[1.75] text-white tracking-wider md:tracking-wide md:pb-2">With reliability and speed in mind, worldwide data centers provide the backbone for ultra-fast connectivity.
+          <h3 class="mt-12 text-4.5xl font-bold tracking-tight text-white leading-tight">State of the Art Infrastructure</h3>
+          <p class="pt-5 leading-slack text-white tracking-wider md:tracking-wide md:pb-2">With reliability and speed in mind, worldwide data centers provide the backbone for ultra-fast connectivity.
     This ensures your site will load instantly, no matter where your readers are, keeping your site competitive.</p>
         </div>
       </section>
@@ -144,21 +145,21 @@
     <section class="pt-20 overflow-hidden md:mt-20 md:grid md:grid-cols-2 md:pt-28 md:pb-40">
       <picture>
         <source srcset="./images/illustration-laptop-desktop.svg" media="(min-width: 768px)">
-        <img class="object-cover mx-auto scale-[1.35] translate-y-6 md:-translate-x-[21%]" src="./images/illustration-laptop-mobile.svg" alt="">
+        <img class="object-cover mx-auto scale-[1.35] translate-y-6 md:-translate-x-3/7" src="./images/illustration-laptop-mobile.svg" alt="">
       </picture>
       <div class="px-8 md:col-start-2 md:pl-4 md:pr-3 md:-mt-28 md:max-w-xl lg:mt-0 lg:pt-2">
-        <h3 class="mt-24 pt-3 text-2.5xl font-bold text-dark-blue leading-[1.25]">Free, open, simple</h3>
-        <p class="pt-5 leading-[1.75] tracking-wide md:tracking-wide md:pb-7">Blogr is a free and open source application backed by a large community of helpful developers. It supports
+        <h3 class="mt-24 pt-3 text-2.5xl font-bold text-dark-blue leading-tight">Free, open, simple</h3>
+        <p class="pt-5 leading-slack tracking-wide md:tracking-wide md:pb-7">Blogr is a free and open source application backed by a large community of helpful developers. It supports
   features such as code syntax highlighting, RSS feeds, social media integration, third-party commenting tools,
   and works seamlessly with Google Analytics. The architecture is clean and is relatively easy to learn.</p>
-        <h3 class="mt-12 text-2.5xl font-bold text-dark-blue leading-[1.25]">Powerful tooling</h3>
-        <p class="pt-5 leading-[1.75] tracking-wide md:tracking-wide md:pb-2">Batteries included. We built a simple and straightforward CLI tool that makes customization and deployment a breeze, but
+        <h3 class="mt-12 text-2.5xl font-bold text-dark-blue leading-tight">Powerful tooling</h3>
+        <p class="pt-5 leading-slack tracking-wide md:tracking-wide md:pb-2">Batteries included. We built a simple and straightforward CLI tool that makes customization and deployment a breeze, but
   capable of producing even the most complicated sites.</p>
       </div>
     </section>
   </main>
-  <footer class="mt-24 bg-dark-black-blue text-gray-blue text-center font-special rounded-tr-[100px] pt-16 pb-20 md:mt-20">
-    <section class="pt-2 md:px-6 md:flex md:gap-20 md:max-w-[1115px] md:mx-auto lg:gap-44 xl:px-0">
+  <footer class="mt-24 bg-dark-black-blue text-gray-blue text-center font-special rounded-tr-100 pt-16 pb-20 md:mt-20">
+    <section class="pt-2 md:px-6 md:flex md:gap-20 md:max-w-custom md:mx-auto lg:gap-44 xl:px-0">
       <img class="mx-auto w-auto h-full md:mx-0" src="./images/logo.svg" alt="">
       <ul class="mt-20 grid gap-12 tracking-wider md:mt-0 md:w-full md:grid-cols-3 md:text-start md:px-3">
         <template x-for="item in menuItems">
