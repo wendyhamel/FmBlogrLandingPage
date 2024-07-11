@@ -39,17 +39,17 @@
         <div class="hidden md:block md:w-full md:flex md:items-center md:justify-between md:gap-6">
           <ul class="flex items-center gap-8 font-special">
             <template x-for="item in menuItems">
-              <li class="text-white/80 hover:text-white">
+              <li class="group relative">
                 <details>
                   <summary class="flex gap-2 items-center justify-center">
-                    <span class="font-medium" x-text="item.title"></span>
+                    <span class="cursor-pointer font-medium text-white/80 hover:text-white hover:underline transition" x-text="item.title"></span>
                     <span class="grid place-content-center">
                           <img class="transform" :class="subMenuOpened ? 'rotate-180'" src="./images/icon-arrow-light.svg" alt="">
                         </span>
                   </summary>
-                  <ul class="bg-gray-blue/30 rounded mt-4 py-4 space-y-4">
+                  <ul class="absolute -translate-x-6 min-w-44 bg-white rounded mt-4 px-6 pt-3 pb-6 space-y-4 shadow-2xl">
                     <template x-for="subItem in item.subItems" :key="index">
-                      <li><a href="#" x-text="subItem"></a></li>
+                      <li><a class="hover:font-bold transition" href="#" x-text="subItem"></a></li>
                     </template>
                   </ul>
                 </details>
@@ -57,8 +57,8 @@
             </template>
           </ul>
           <ul class="flex items-center gap-6">
-            <li><a href="#" class="whitespace-nowrap font-special font-bold text-white/80 px-2 hover:text-white">Login</a></li>
-            <li><a href="#" class="block rounded-full px-9 py-3.5 border border-white whitespace-nowrap font-special font-bold bg-white text-light-red leading-none">Sign Up</a></li>
+            <li><a href="#" class="whitespace-nowrap font-special font-bold text-white/80 px-2 hover:text-white hover:underline transition">Login</a></li>
+            <li><a href="#" class="block rounded-full px-9 py-3.5 whitespace-nowrap font-special font-bold bg-white text-light-red leading-none hover:bg-white/30 hover:text-white transition">Sign Up</a></li>
           </ul>
         </div>
         <div class="relative md:hidden" @keyup.escape="menuOpened = false">
@@ -100,8 +100,8 @@
         <h1 class="text-3.5xl font-bold mb-2 md:text-6xl md:tracking-[-0.0125em] md:mb-4">A modern publishing platform</h1>
         <p class="mb-12 font-special tracking-wider font-light md:text-lg md:tracking-wide md:pt-1">Grow your audience and build your online brand</p>
         <div class="inline-flex w-full gap-6 flex-wrap justify-center">
-          <a href="#" class="block rounded-full px-4 py-3.5 border border-white whitespace-nowrap font-special font-bold bg-white text-light-red leading-none">Start for Free</a>
-          <a href="#" class="block rounded-full px-4 py-3.5 border border-white whitespace-nowrap font-special font-bold text-white leading-none">Learn More</a>
+          <a href="#" class="block rounded-full px-4 py-3.5 border border-white whitespace-nowrap font-special font-bold bg-white text-light-red leading-none hover:bg-white/30 hover:text-white hover:border-transparent transition">Start for Free</a>
+          <a href="#" class="block rounded-full px-4 py-3.5 border border-white whitespace-nowrap font-special font-bold text-white leading-none hover:bg-white hover:text-light-red transition">Learn More</a>
         </div>
       </section>
     </div>
@@ -168,7 +168,7 @@
             </button>
             <ul class="pt-5 space-y-2.5 md:space-y-3.5">
               <template x-for="subItem in item.subItems">
-                <li class="md:text-sm" x-text="subItem"></li>
+                <li class="md:text-sm"><a href="#" class="hover:underline transition" x-text="subItem"></a></li>
               </template>
             </ul>
           </li>

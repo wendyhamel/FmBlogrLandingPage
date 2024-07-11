@@ -7,4 +7,9 @@
 	details > summary > span > img { rotate: 0deg }
 	details[open] > summary > span { opacity: 80% }
 	details[open] > summary > span > img { rotate: 180deg }
+
+	li.group > details summary::-webkit-details-marker {display: none }
+	li.group > details > summary > span > img { rotate: 0deg }
+	li.group > details[open] > summary > span { color:white; text-decoration: underline }
+	li.group > details[open] > summary > span > img { rotate: 180deg }
 }
