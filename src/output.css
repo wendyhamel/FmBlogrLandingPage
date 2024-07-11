@@ -1318,6 +1318,10 @@ li.group > details[open] > summary > span > img {
     margin-top: 1rem;
   }
 
+  .md\:mt-40 {
+    margin-top: 10rem;
+  }
+
   .md\:block {
     display: block;
   }
