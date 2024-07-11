@@ -19,7 +19,7 @@ module.exports = {
         'custom': '1115px',
       },
       scale: {
-        '160': '1.6',
+        '162': '1.62',
       },
       leading: {
         'xs': '1.125',
